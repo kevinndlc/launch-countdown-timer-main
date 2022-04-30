@@ -54,6 +54,8 @@ body {
   &__countdown {
     display: flex;
     gap: 1rem;
+    max-width: 43rem;
+    margin-inline: auto;
 
     .flex-item {
       flex: 1 1 0px;
@@ -72,7 +74,7 @@ body {
         padding-block: 0.875rem;
         overflow: hidden;
         box-shadow: 0 5px 0 var(--clr-mostly-dark-blue);
-        perspective: 15rem;
+        perspective: 10rem;
 
         .top-sheet {
           position: absolute;
@@ -80,13 +82,13 @@ body {
           left: 0;
           right: 0;
           height: 50%;
-          background: hsla(0 0 0 / 0.15);
-          border-bottom: 0.5px solid hsla(0 0 0 / 0.25);
+          background: hsla(0 0% 0% / 0.15);
+          border-bottom: 0.5px solid hsla(0 0% 0% / 0.25);
           transform-origin: bottom center;
           
           &.pulled {
-            transform: rotateX(180deg);
-            transition: transform 900ms ease-in-out;
+            transform: rotateX(-180deg);
+            transition: transform 800ms ease-in-out;
           }
         }
 
@@ -126,7 +128,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 168px;
+  height: 10.5rem;
   background-image: url(./images/pattern-hills.svg);
   background-repeat: no-repeat;
   background-position: 85% 0%;
@@ -142,8 +144,14 @@ body {
     align-items: center;
     gap: 2rem;
 
-    img {
-      width: 1.5rem;
+    a {
+      color: hsl(237, 18%, 59%);
+      transition: color 400ms;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--clr-soft-red);
     }
   }
 
@@ -164,6 +172,64 @@ body {
         text-decoration: underline;
         text-decoration-color: white;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .main {
+    padding: 8.25rem 0 0;
+
+    &__title {
+      font-size: 1.375rem;
+      letter-spacing: 7.5px;
+      margin-bottom: 6.5rem;
+    }
+
+    &__countdown {
+      .flex-item {
+        > div {
+          font-size: 5rem;
+          line-height: 1.5;
+          letter-spacing: -1.08px;
+          border-radius: 0.5rem;
+          margin-bottom: 1.625rem;
+          padding-block: 0.875rem;
+          box-shadow: 0 10px 0 var(--clr-mostly-dark-blue);
+          perspective: 15rem;      
+
+          &::before,
+          &::after {
+            width: 12px;
+          }
+
+          &::before {
+            left: -6px;
+          }
+          &::after {
+            right: -6px;
+          }
+        }
+
+        > span {
+          font-size: 0.875rem;
+          line-height: normal;
+          letter-spacing: 5.92px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    height: 12.3125rem;
+    
+    .socials {
+      bottom: 4.5rem;
+    }
+
+    .attributions {
+      bottom: 1rem;
+      font-size: 1rem;
     }
   }
 }

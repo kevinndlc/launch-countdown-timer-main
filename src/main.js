@@ -14,14 +14,25 @@ let totalSeconds =
   nbSeconds + nbMinutes * 60 + nbHours * 3600 + nbDays * 3600 * 24;
 
 const displayCountdown = () => {
-  days.textContent = nbDays.toString().padStart(2, '0');
   if (previousValues.days != nbDays) pullSheet(days)
-  hours.textContent = nbHours.toString().padStart(2, '0');
+  setTimeout(() => {
+    days.textContent = nbDays.toString().padStart(2, '0');
+  }, 250);
+
   if (previousValues.hours != nbHours) pullSheet(hours);
-  minutes.textContent = nbMinutes.toString().padStart(2, '0');
+  setTimeout(() => {
+    hours.textContent = nbHours.toString().padStart(2, '0');
+  }, 400);
+
   if (previousValues.minutes != nbMinutes) pullSheet(minutes);
-  seconds.textContent = nbSeconds.toString().padStart(2, '0');
+  setTimeout(() => {
+    minutes.textContent = nbMinutes.toString().padStart(2, '0');
+  }, 400);
+
   if (previousValues.seconds != nbSeconds) pullSheet(seconds);
+  setTimeout(() => {
+    seconds.textContent = nbSeconds.toString().padStart(2, '0');
+  }, 400);
 }
 
 const pullSheet = (el) => {
@@ -29,7 +40,7 @@ const pullSheet = (el) => {
   sheet.classList.add('pulled');
   setTimeout(() => {
     sheet.classList.remove('pulled');
-  }, 900);
+  }, 800);
 }
 
 window.onload = displayCountdown
