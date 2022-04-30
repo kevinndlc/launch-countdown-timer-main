@@ -1,7 +1,7 @@
 let nbDays = 8;
 let nbHours = 23;
 let nbMinutes = 55;
-let nbSeconds = 42;
+let nbSeconds = 41;
 
 const previousValues = {
   seconds: nbSeconds,
