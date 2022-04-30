@@ -147,6 +147,10 @@ body {
     a {
       color: hsl(237, 18%, 59%);
       transition: color 400ms;
+
+      svg {
+        display: block;
+      }
     }
 
     a:hover,
