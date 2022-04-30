@@ -187,6 +187,8 @@ body {
     }
 
     &__countdown {
+      gap: 2rem;
+
       .flex-item {
         > div {
           font-size: 5rem;
